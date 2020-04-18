@@ -5,8 +5,13 @@
 
 <h2>Consist of three components.</h2>
 <p><b>1. @Entity</b></p>
+<p><b> It represent entity in a table. By using this annotation above any dataclass then the name of class becomes TableName and its Data Members becomes name of columns.
+
 <p><b>2. @Dao</b></p>
+<p><b> Contains the methods used for accessing the database. like all sql queries.</b></p>
+<p><b> @Dao should either be an interface or an abstract class. At compile time, Room will generate an implementation of this class when it is referenced by a Database.</b></p>
 <p><b>3. @Database</b></p>
+<p><b> We create an abstract class which extends RoomDatabase.It is database layer above SqlLite database.</b></p>
 
 
 <h2>Room supported queries are :-</h2>
