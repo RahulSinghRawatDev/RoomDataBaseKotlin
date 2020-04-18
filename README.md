@@ -23,3 +23,18 @@
 <p><b>2. All the queries except the @RawQuery are checked at compile time that means if you write any wrong query then it will throw an complile time exception and the issue will get caught there only.</b></p>
 <p><b>3. It will throw IllegalStateException if you try to access database from MainThread.</b></p>
 
+
+<h2>Steps to update Room Database</h2>
+<p><b>1. Update the database version.</b></p>
+<p><b>2. Implement migration class.</b></p>
+<p><b>ex.</p></b>
+<code> val Migration_1_2 : Migration = Object : Migration(1,2){
+
+       override fun migrate(database : SupportSQLiteDataBase){
+            database.execSQL("ALTER TABLE users "+ "ADD COLUMN address STRING")
+       }
+
+    }
+</code>
+
+
