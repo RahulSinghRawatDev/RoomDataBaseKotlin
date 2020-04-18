@@ -27,7 +27,6 @@
 <h2>Steps to update Room Database</h2>
 <p><b>1. Update the database version.</b></p>
 <p><b>2. Implement migration class.</b></p>
-<p><b>Example.</p></b>
 <code>
  val Migration_1_2 : Migration = Object : Migration(1,2){
        override fun migrate(database : SupportSQLiteDataBase){
