@@ -27,14 +27,30 @@
 <h2>Steps to update Room Database</h2>
 <p><b>1. Update the database version.</b></p>
 <p><b>2. Implement migration class.</b></p>
-<p><b>ex.</p></b>
-<code> val Migration_1_2 : Migration = Object : Migration(1,2){
-
+<p><b>Example.</p></b>
+<code>
+ val Migration_1_2 : Migration = Object : Migration(1,2){
        override fun migrate(database : SupportSQLiteDataBase){
             database.execSQL("ALTER TABLE users "+ "ADD COLUMN address STRING")
        }
-
     }
 </code>
+<p><b> 3. Add the migration class as a parameter to database filter </b></p>
+<code>
+    Room.databaseBuilder(context.getApplicationContext(),
+                        UserDatabase::class.java,"Sample.db")
+                        .addMigrations(Migration_1_2)
+                        .build();
+</code>
+<p><b>* if you dont want to handle the migration and dont want to preserve data on database then add fallbackToDestructiveMigrations() method to database filter</b></p>
+<code>
+    Room.databaseBuilder(context.getApplicationContext(),
+                        UserDatabase::class.java,"Sample.db")
+                        .fallbackToDestructiveMigrations() // you can define verions inside this function like fallbackToDestructiveMigrations(5) if you want to recreate from particular version.
+                        .build();
+</code>
+
+
+
 
 
