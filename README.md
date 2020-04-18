@@ -19,7 +19,7 @@
 
 
 <h2>Advantages of Room database over SqlLite Database</h2>
-<p><b>It has extended its support for rxjava , coroutines , viewmodel and paging libraries that makes the work really very easy thus removing huge boilerplate code.</b></p>
-<p><b>All the query except the raw query are checked at compile time that means if you write any wrong query then it will throw and complile time exception and the issue will get caught there only.</b></p>
-<p><b>It will throw Illegal exception if you access database from MainThread.</b></p>
+<p><b>1. It has extended its support for RxJava , Coroutines , Viewmodel and Paging libraries that makes the work really very easy thus removing huge boilerplate code.</b></p>
+<p><b>2. All the queries except the @RawQuery are checked at compile time that means if you write any wrong query then it will throw an complile time exception and the issue will get caught there only.</b></p>
+<p><b>3. It will throw IllegalStateException if you try to access database from MainThread.</b></p>
 
